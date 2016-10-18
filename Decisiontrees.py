@@ -14,7 +14,7 @@ from sklearn import tree
 from sklearn.externals.six import StringIO
 from docutils.readers import Reader
 
-allElectronicsData = open('C:\\Users\\Administrator\\Desktop\\trees.csv', 'r')
+allElectronicsData = open('trees.csv', 'r')
 headers = allElectronicsData.readline()
 reader = csv.reader(allElectronicsData)
 headers = ['RID','age','income','student','credit','buy']
@@ -48,7 +48,7 @@ clf = tree.DecisionTreeClassifier(criterion='entropy')
 clf = clf.fit(dummx,dummy)
 print('clf:' + str(clf))
 
-with open('C:\\Users\\Administrator\\Desktop\\allElectronicInformation.dot', 'w') as f:
+with open('allElectronicInformation.dot', 'w') as f:
     f = tree.export_graphviz(clf, feature_names=vec.get_feature_names(), out_file = f)
 oneRowx = dummx[0, :]
 print('oneRowx:' + str(oneRowx))
